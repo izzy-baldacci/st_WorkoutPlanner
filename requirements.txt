@@ -1,2 +1,7 @@
 streamlit
 pandas
+matplotlib
+seaborn
+numpy
+json
+datetime
