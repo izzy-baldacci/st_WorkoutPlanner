@@ -1,0 +1,583 @@
+Body_Part,Exercise,Category
+Squat,Lowbar Squat,Movement_Pattern
+Squat,Highbar Squat,Movement_Pattern
+Squat,SSB,Movement_Pattern
+Squat,Heel Raised SSB,Movement_Pattern
+Squat,Front Squat,Movement_Pattern
+Squat,Zombie Squat,Movement_Pattern
+Squat,Pause Squat,Movement_Pattern
+Squat,Tempo Squat,Movement_Pattern
+Squat,Platt Squat,Movement_Pattern
+Squat,Belt Squat,Movement_Pattern
+Squat,Lever Squat,Movement_Pattern
+Squat,Pendulum Squat,Movement_Pattern
+Squat,Hack Squat,Movement_Pattern
+Squat,Goblet Squat,Movement_Pattern
+Squat,HEGS,Movement_Pattern
+Squat,Sissy Squat,Movement_Pattern
+Hinge,Conventional Deadlift,Movement_Pattern
+Hinge,Sumo Deadlift,Movement_Pattern
+Hinge,Deficit Deadlift,Movement_Pattern
+Hinge,Beltless Deficit Deadlift,Movement_Pattern
+Hinge,Pause Deadlift,Movement_Pattern
+Hinge,DB Deadlift,Movement_Pattern
+Hinge,DB Suitcase Deadlift,Movement_Pattern
+Hinge,BB RDL,Movement_Pattern
+Hinge,DB RDL,Movement_Pattern
+Hinge,DB SL RDL,Movement_Pattern
+Hinge,Suitcase RDL,Movement_Pattern
+Hinge,BB Good Mornings,Movement_Pattern
+Hinge,DB Good Mornings,Movement_Pattern
+Hinge,Glute Ham Developer,Movement_Pattern
+Hinge,Trap Bar Deadlift,Movement_Pattern
+Hinge,B-Stance RDL,Movement_Pattern
+Horizontal Push,Barbell Bench,Movement_Pattern
+Horizontal Push,Comp Bench,Movement_Pattern
+Horizontal Push,Close Grip Bench,Movement_Pattern
+Horizontal Push,Pin Press,Movement_Pattern
+Horizontal Push,Tempo Bench,Movement_Pattern
+Horizontal Push,Spotto Bench,Movement_Pattern
+Horizontal Push,Pause Bench,Movement_Pattern
+Horizontal Push,BB 30° Incline Bench,Movement_Pattern
+Horizontal Push,BB 45° Incline Bench,Movement_Pattern
+Horizontal Push,DB 30° Incline Bench,Movement_Pattern
+Horizontal Push,DB 45° Incline Bench,Movement_Pattern
+Vertical Push,BB Overhead Press,Movement_Pattern
+Vertical Push,BB Pin Press,Movement_Pattern
+Vertical Push,BB Pause Press,Movement_Pattern
+Vertical Push,Log Press,Movement_Pattern
+Vertical Push,DB Overhead Press,Movement_Pattern
+Vertical Push,DB Seated Overhead Press,Movement_Pattern
+Vertical Push,Cable Shoulder Press,Movement_Pattern
+Vertical Push,Push Press,Movement_Pattern
+Horizontal Pull,BB Bodybuilder Row,Movement_Pattern
+Horizontal Pull,BB Chained Row,Movement_Pattern
+Horizontal Pull,BB Deficit Row,Movement_Pattern
+Horizontal Pull,BB Row,Movement_Pattern
+Horizontal Pull,BB Upright Row,Movement_Pattern
+Horizontal Pull,CR Narrow Grip,Movement_Pattern
+Horizontal Pull,CR Regular Grip,Movement_Pattern
+Horizontal Pull,CR Wide Grip,Movement_Pattern
+Horizontal Pull,CSR Narrow Grip,Movement_Pattern
+Horizontal Pull,CSR Regular Grip,Movement_Pattern
+Horizontal Pull,CSR Wide Grip,Movement_Pattern
+Horizontal Pull,DB Bentover Rows,Movement_Pattern
+Horizontal Pull,DB Incline Seal Rows,Movement_Pattern
+Horizontal Pull,DB SA Rows,Movement_Pattern
+Horizontal Pull,DB Seal Rows,Movement_Pattern
+Horizontal Pull,Horizontal Iliac Pull Around,Movement_Pattern
+Horizontal Pull,SA CS Cable Row,Movement_Pattern
+Horizontal Pull,T-bar Row,Movement_Pattern
+Vertical Pull,LPD Regular Grip,Movement_Pattern
+Vertical Pull,1/2 Kneeling SA Cable Pulldown,Movement_Pattern
+Vertical Pull,Chin Ups,Movement_Pattern
+Vertical Pull,Lat Pullovers,Movement_Pattern
+Vertical Pull,LPD Narrow Grip,Movement_Pattern
+Vertical Pull,LPD Wide Grip,Movement_Pattern
+Vertical Pull,Negative Chin Ups,Movement_Pattern
+Vertical Pull,Negative Pull Ups,Movement_Pattern
+Vertical Pull,Pull Ups,Movement_Pattern
+Vertical Pull,Vertical Iliac Pull Around,Movement_Pattern
+Carry,DB Farmers Carry,Movement_Pattern
+Carry,DB Suitcase Carry,Movement_Pattern
+Carry,DB Waiters Carry,Movement_Pattern
+Carry,DB SA Overhead Carry,Movement_Pattern
+Carry,Trap Bar Hold,Movement_Pattern
+Hang,Bar Dead Hang,Movement_Pattern
+Hang,Bar Active Hang,Movement_Pattern
+Hang,HB Straight Arm Hang,Movement_Pattern
+Hang,HB Bent Arm Hang,Movement_Pattern
+Hang,HB Lock Off Hang,Movement_Pattern
+Pecs,Comp Bench,Isolation
+Pecs,Barbell Bench,Isolation
+Pecs,Close Grip Bench,Isolation
+Pecs,Tempo Bench,Isolation
+Pecs,Spotto Bench,Isolation
+Pecs,Pause Bench,Isolation
+Pecs,Pin Press,Isolation
+Pecs,Chained Bench,Isolation
+Pecs,Banded Bench,Isolation
+Pecs,Earthquake Bar Bench,Isolation
+Pecs,DB Bench,Isolation
+Pecs,SA DB Bench,Isolation
+Pecs,BB 30° Incline Bench,Isolation
+Pecs,BB 45° Incline Bench,Isolation
+Pecs,DB 30° Incline Bench,Isolation
+Pecs,DB 45° Incline Bench,Isolation
+Pecs,DB Close Grip Bench,Isolation
+Pecs,DB Fly,Isolation
+Pecs,Low Cable Fly,Isolation
+Pecs,Mid Cable Fly,Isolation
+Pecs,High Cable Fly,Isolation
+Pecs,Seated Cable Fly,Isolation
+Pecs,Incline Bench Cable Fly,Isolation
+Pecs,Plate Press,Isolation
+Pecs,Swiss Bar Regular Grip,Isolation
+Pecs,Swiss Bar Close Grip,Isolation
+Side Delts,BB OH Press,Isolation
+Side Delts,BB Pin Press,Isolation
+Side Delts,BB Pause Press,Isolation
+Side Delts,BB Chained Press,Isolation
+Side Delts,BB Banded Press,Isolation
+Side Delts,Log Press,Isolation
+Side Delts,DB OH Press,Isolation
+Side Delts,DB Seated OH Press,Isolation
+Side Delts,Cable Shoulder Press,Isolation
+Side Delts,DB Side Lateral Raises,Isolation
+Side Delts,Cable Side Lateral Raises,Isolation
+Side Delts,Push Press,Isolation
+Lats,BB Deficit Row,Isolation
+Lats,BB Row,Isolation
+Lats,BB Bodybuilder Row,Isolation
+Lats,BB Upright Row,Isolation
+Lats,BB Chained Row,Isolation
+Lats,Paused T-bar Row,Isolation
+Lats,LPD Regular Grip,Isolation
+Lats,LPD Wide Grip,Isolation
+Lats,LPD Narrow Grip,Isolation
+Lats,CSR Regular Grip,Isolation
+Lats,CSR Wide Grip,Isolation
+Lats,CSR Narrow Grip,Isolation
+Lats,Lat Pullovers,Isolation
+Lats,DB Seal Rows,Isolation
+Lats,DB Incline Seal Rows,Isolation
+Lats,DB Bentover Rows,Isolation
+Lats,DB SA Rows,Isolation
+Lats,SA CS Cable Row,Isolation
+Lats,Vertical Iliac Pull Around,Isolation
+Lats,Horizontal Iliac Pull Around,Isolation
+Quads,Pause Squat,Isolation
+Quads,Barbell Squat,Isolation
+Quads,Lowbar Squat,Isolation
+Quads,Highbar Squat,Isolation
+Quads,SSB,Isolation
+Quads,Heel Raised SSB,Isolation
+Quads,Front Squat,Isolation
+Quads,Zombie Squat,Isolation
+Quads,Tempo Squat,Isolation
+Quads,Chained Squat,Isolation
+Quads,Banded Squat,Isolation
+Quads,Platt Squat,Isolation
+Quads,Belt Squat,Isolation
+Quads,Lever Squat,Isolation
+Quads,Pendulum Squat,Isolation
+Quads,Hack Squat,Isolation
+Quads,Goblet Squat,Isolation
+Quads,HEGS,Isolation
+Quads,Bulgarian Split Squats,Isolation
+Quads,Leg Press,Isolation
+Quads,Quad Extension,Isolation
+Quads,Sissy Squats,Isolation
+Quads,Front Foot Elevated Lunge,Isolation
+Hamstrings,Conventional Deadlift,Isolation
+Hamstrings,Sumo Deadlift,Isolation
+Hamstrings,Trap Bar Deadlift,Isolation
+Hamstrings,Deficit Deadlift,Isolation
+Hamstrings,Beltless Deficit Deadlift,Isolation
+Hamstrings,Pause Deadlift,Isolation
+Hamstrings,Chained Deadlift,Isolation
+Hamstrings,Banded Deadlift,Isolation
+Hamstrings,DB Deadlift,Isolation
+Hamstrings,DB Suitcase Deadlift,Isolation
+Hamstrings,BB RDL,Isolation
+Hamstrings,DB RDL,Isolation
+Hamstrings,DB SL RDL,Isolation
+Hamstrings,B-Stance RDL,Isolation
+Hamstrings,Suitcase RDL,Isolation
+Hamstrings,BB Good Mornings,Isolation
+Hamstrings,DB Good Mornings,Isolation
+Hamstrings,Lying Cable Hamstring Curl,Isolation
+Hamstrings,Banded Lying Hamstring Curl,Isolation
+Hamstrings,Nordic Hamstring Curls,Isolation
+Hamstrings,Glute Ham Developer,Isolation
+Calves,Standing Calf Raises,Isolation
+Calves,Seated Calf Raises,Isolation
+Calves,DB Calf Raises,Isolation
+Calves,SL Standing Calf Raises,Isolation
+Calves,SL Seated Calf Raises,Isolation
+Rear Delts,Band Pull Aparts,Isolation
+Rear Delts,Cable Face Pulls,Isolation
+Rear Delts,CS Rear Delt Fly,Isolation
+Rear Delts,CSR Wide Grip,Isolation
+Rear Delts,Bentover Rear Delt Fly,Isolation
+Rear Delts,YTWs,Isolation
+Rear Delts,YTAs,Isolation
+Rear Delts,Banded Face Pulls,Isolation
+Rear Delts,Inverted Band Pull Aparts,Isolation
+Rear Delts,Cable Crossover Rear Delt Flyes,Isolation
+Traps,DB Shrugs,Isolation
+Traps,Barbell Shrugs,Isolation
+Traps,Sumo Deadlift,Isolation
+Traps,Conventional Deadlift,Isolation
+Front Delts,DB Front Raise,Isolation
+Front Delts,Cable Front Raise,Isolation
+Bis,DB Bicep Curl,Isolation
+Bis,DB Hammer Curl,Isolation
+Bis,DB Incline Curl,Isolation
+Bis,Cable Bicep Curl,Isolation
+Bis,Cable Incline Curl,Isolation
+Bis,Preacher Curl,Isolation
+Bis,EZB Curl,Isolation
+Bis,BB Curl,Isolation
+Tris,DB Katana Extension,Isolation
+Tris,Tricep Pushdown,Isolation
+Tris,Rolling Tricep Extension,Isolation
+Tris,BB Skullcrusher,Isolation
+Tris,EZB Skullcrusher,Isolation
+Tris,Banded Tricep Extension,Isolation
+Tris,DB Tricep Kickbacks,Isolation
+Tris,Cable Tricep Kickbacks,Isolation
+Forearms,Block Pinch,Isolation
+Forearms,DB Wrist Curls,Isolation
+Forearms,Cable Wrist Curls,Isolation
+Forearms,Static Hang,Isolation
+Forearms,HB Full Crimp,Isolation
+Forearms,HB SA Full Crimp,Isolation
+Forearms,HB Half Crimp,Isolation
+Forearms,HB SA Half Crimp,Isolation
+Forearms,HB Open Hand,Isolation
+Forearms,HB SA Open Hand,Isolation
+Forearms,HB 3 Finger Drag,Isolation
+Forearms,HB SA 3 Finger Drag,Isolation
+Forearms,HB Medium Sloper,Isolation
+Forearms,HB Hard Sloper,Isolation
+Forearms,HB SA Hard Sloper,Isolation
+Forearms,HB Jug,Isolation
+Forearms,HB SA Jug,Isolation
+Forearms,CB Dynos,Isolation
+Forearms,CB SA,Isolation
+Forearms,CA SA Up/Down,Isolation
+Forearms,Deadlift w/Hold,Isolation
+Forearms,Gripper,Isolation
+Abs,Ab Wheel,Isolation
+Abs,Deadbugs,Isolation
+Abs,Banded Deadbugs,Isolation
+Abs,Banded Crunches,Isolation
+Abs,Planks (Weighted),Isolation
+Abs,Planks (Unweighted),Isolation
+Abs,V-ups,Isolation
+Abs,Toes-to-Bar,Isolation
+Abs,Pavlov Press,Isolation
+Abs,Bird Dogs,Isolation
+Abs,Suitcase Carry,Isolation
+Abs,Suitcase Deadlifts,Isolation
+Abs,Suitcase RDLs,Isolation
+Abs,Cable Crunches,Isolation
+Abs,Cable Chop,Isolation
+Glutes,SL Hip Thrust,Isolation
+Glutes,BB Hip Thrust,Isolation
+Glutes,DB Hip Thrust,Isolation
+Glutes,DB SL Hip Thrust,Isolation
+Glutes,SL RDL,Isolation
+Glutes,DB SL RDL,Isolation
+Glutes,Hip Thrust Machine,Isolation
+Pecs,Band Press,Banded
+Pecs,High Band Press,Banded
+Pecs,Low Band Press,Banded
+Pecs,Band Fly,Banded
+Pecs,High Band Fly,Banded
+Pecs,Low Band Fly,Banded
+Rear Delts,Band Pull Aparts,Banded
+Rear Delts,Banded Face Pulls,Banded
+Rear Delts,YTWs,Banded
+Rear Delts,YTAs,Banded
+Rear Delts,Inverted Band Pull Aparts,Banded
+Side Delts,Band OH Press,Banded
+Side Delts,Seated Band OH Press,Banded
+Side Delts,Band Side Lateral Raises,Banded
+Traps,Band Shrugs,Banded
+Front Delts,Band Front Raise,Banded
+Bis,Band Bicep Curl,Banded
+Bis,Band Hammer Curl,Banded
+Tris,Band Tricep Pushdown,Banded
+Forearms,Band Wrist Curl,Banded
+Abs,Banded Deadbugs,Banded
+Abs,Banded Crunches,Banded
+Abs,Pavlov Press,Banded
+Glutes,Band Hip Thrust,Banded
+Glutes,Band SL Hip Thrust,Banded
+Glutes,Band RDL,Banded
+Glutes,Band SL RDL,Banded
+Calves,Band Calf Raises,Banded
+Hamstrings,Band Conventional Deadlift,Banded
+Hamstrings,Band Sumo Deadlift,Banded
+Hamstrings,Band RDL,Banded
+Hamstrings,Band Good Mornings,Banded
+Hamstrings,Band Hamstring Curls,Banded
+Quads,Band Back Squat,Banded
+Quads,Band Front Squat,Banded
+Quads,Band Zombie Squat,Banded
+Quads,Band Tempo Squat,Banded
+Quads,Band Quad Extension,Banded
+Lats,Band Bent Row,Banded
+Lats,Band SA Row,Banded
+Lats,Band Lat Pullovers,Banded
+Lats,Band PD Regular Grip,Banded
+Lats,Band PD Wide Grip,Banded
+Lats,Band PD Narrow Grip,Banded
+Lats,Band Upright Row,Banded
+Front Lever,Tuck FL,Bodyweight
+Front Lever,German Hang,Bodyweight
+Front Lever,Tuck Skin the Cat,Bodyweight
+Front Lever,Adv Tuck Skin the Cat,Bodyweight
+Front Lever,Pike Skin the Cat,Bodyweight
+Front Lever,Adv Tuck FL,Bodyweight
+Front Lever,Front Lever,Bodyweight
+Front Lever,FL to Inverted,Bodyweight
+Front Lever,FL Pullout,Bodyweight
+Front Lever,360° Pull,Bodyweight
+Push Up,Archer Push Up,Bodyweight
+Push Up,Incline Push Up,Bodyweight
+Push Up,Incline Narrow Hands Pushup,Bodyweight
+Push Up,Incline Wide Hands Pushup,Bodyweight
+Push Up,Push Up,Bodyweight
+Push Up,Wide Hands Pushup,Bodyweight
+Push Up,Narrow Hands Pushup,Bodyweight
+Push Up,Diamond Push Up,Bodyweight
+Push Up,PP Push Up,Bodyweight
+Push Up,Pike Push Up,Bodyweight
+Push Up,Decline Pike PU,Bodyweight
+Push Up,Ring Push Up,Bodyweight
+Push Up,Ring Wide PU,Bodyweight
+Push Up,Ring Archer PU,Bodyweight
+Push Up,RTO Push Up,Bodyweight
+Push Up,RTO Archer PU,Bodyweight
+Push Up,RTO PP PU,Bodyweight
+Push Up,Incline OA PU,Bodyweight
+Push Up,Straddle OA PU,Bodyweight
+Push Up,Ring Str OA PU,Bodyweight
+Push Up,One Arm Push Up,Bodyweight
+Push Up,Ring OA PU Neg,Bodyweight
+Push Up,Ring OA Push Up,Bodyweight
+Back Lever,German Hang,Bodyweight
+Back Lever,Tuck Skin the Cat,Bodyweight
+Back Lever,Adv Tuck Skin the Cat,Bodyweight
+Back Lever,Pike Skin the Cat,Bodyweight
+Back Lever,Tuck BL,Bodyweight
+Back Lever,Adv Tuck BL,Bodyweight
+Back Lever,OL Back Lever,Bodyweight
+Back Lever,Straddle BL,Bodyweight
+Back Lever,Back Lever,Bodyweight
+Back Lever,BL to Inverted,Bodyweight
+Back Lever,BL Pullout,Bodyweight
+Back Lever,360° Pull,Bodyweight
+Planche,Frog Stand / Crow Pose,Bodyweight
+Planche,Plank,Bodyweight
+Planche,Straddle One Arm Plank,Bodyweight
+Planche,Planche Lean,Bodyweight
+Planche,Straight Arm Frog Stand / Crane Pose,Bodyweight
+Planche,Ring Frog Stand,Bodyweight
+Planche,Straddle Elbow Lever,Bodyweight
+Planche,One Leg Elbow Lever,Bodyweight
+Planche,Elbow Lever,Bodyweight
+Planche,Tuck Planche,Bodyweight
+Planche,Tuck Planche PU,Bodyweight
+Planche,Adv Tuck PL PU,Bodyweight
+Planche,Adv Tuck PL,Bodyweight
+Planche,Str Planche,Bodyweight
+Planche,One Leg Planche,Bodyweight
+Planche,Planche,Bodyweight
+Planche,SA Str PL to HS,Bodyweight
+Planche,Str Planche PU,Bodyweight
+Planche,Planche Push Up,Bodyweight
+Planche,Incline Plance Pushup,Bodyweight
+Row,Archer Row,Bodyweight
+Row,Incline Row,Bodyweight
+Row,Row,Bodyweight
+Row,Wide Row,Bodyweight
+Row,L-Hang,Bodyweight
+Row,Archer-In Row,Bodyweight
+Row,Straddle OA Row,Bodyweight
+Row,One Arm Row,Bodyweight
+Row,Tuck ICM,Bodyweight
+Row,Tuck FL Row,Bodyweight
+Row,Adv Tuck FL Row,Bodyweight
+Row,SL FL Row,Bodyweight
+Row,Straddle FL Row,Bodyweight
+Row,Front Lever Row,Bodyweight
+Row,Hanging Pull FL to Inv,Bodyweight
+Ring Planche,Plank,Bodyweight
+Ring Planche,Straddle One Arm Plank,Bodyweight
+Ring Planche,Planche Lean,Bodyweight
+Ring Planche,Frog Stand / Crow Pose,Bodyweight
+Ring Planche,Straight Arm Frog Stand / Crane Pose,Bodyweight
+Ring Planche,Ring Frog Stand,Bodyweight
+Ring Planche,Straddle Elbow Lever,Bodyweight
+Ring Planche,One Leg Elbow Lever,Bodyweight
+Ring Planche,Elbow Lever,Bodyweight
+Ring Planche,Ring Elbow Lever,Bodyweight
+Ring Planche,OA Straddle Elbow Lever,Bodyweight
+Ring Planche,One Arm Elbow Lever,Bodyweight
+Ring Planche,Ring SA Frog Stand,Bodyweight
+Ring Planche,Ring Tuck Planche,Bodyweight
+Ring Planche,Ring Tuck PL PU,Bodyweight
+Ring Planche,Ring Adv Tuck PL,Bodyweight
+Ring Planche,Ring Straddle PL,Bodyweight
+Ring Planche,Ring Adv Tuck PL PU,Bodyweight
+Ring Planche,Ring Straddle PL PU,Bodyweight
+Ring Planche,Ring Planche PU,Bodyweight
+Ring Planche,Maltese,Bodyweight
+Pull Up,Chin Up,Bodyweight
+Pull Up,Dead Hang,Bodyweight
+Pull Up,Scapular Pull,Bodyweight
+Pull Up,Active Hang,Bodyweight
+Pull Up,Arch Hang,Bodyweight
+Pull Up,Pull Up Negative,Bodyweight
+Pull Up,Pull Up,Bodyweight
+Pull Up,Archer Pull Up,Bodyweight
+Pull Up,Typewriter Pull Up,Bodyweight
+Pull Up,C2B Pull Up,Bodyweight
+Pull Up,Muscle Up,Bodyweight
+Pull Up,Ring Wide Pull Up,Bodyweight
+Pull Up,OA Pull Up Neg,Bodyweight
+Pull Up,One Arm Pull Up,Bodyweight
+Pull Up,High One Arm Pull Up,Bodyweight
+Squat,Beginner Shrimp Squat,Bodyweight
+Squat,Step Up,Bodyweight
+Squat,Deep Step Up,Bodyweight
+Squat,Assisted Squat,Bodyweight
+Squat,Parallel Squat,Bodyweight
+Squat,Full Squat,Bodyweight
+Squat,Split Squat,Bodyweight
+Squat,Cossack Squat,Bodyweight
+Squat,Bulgarian Split Squat,Bodyweight
+Squat,Partial Pistol Squat,Bodyweight
+Squat,Assisted Pistol Squat,Bodyweight
+Squat,Pistol Squat,Bodyweight
+Squat,Int Shrimp Squat,Bodyweight
+Squat,Weighted Pistol Squat,Bodyweight
+Squat,Natural One Leg Press,Bodyweight
+Squat,Shrimp Squat,Bodyweight
+Squat,Two Hand Shrimp Squat,Bodyweight
+Squat,Elevated 2H Shrimp Squat,Bodyweight
+Squat,Elevated Friction Pistol Squat,Bodyweight
+Squat,Reverse Lunge,Bodyweight
+Squat,Forward Lunge,Bodyweight
+Squat,Jump Squat,Bodyweight
+Squat,Sissy Squat,Bodyweight
+Muscle Up,MU Neg,Bodyweight
+Muscle Up,Scapular Pull,Bodyweight
+Muscle Up,Arch Hang,Bodyweight
+Muscle Up,Pull Up Negative,Bodyweight
+Muscle Up,Pull Up,Bodyweight
+Muscle Up,Pullover,Bodyweight
+Muscle Up,Kipping MU,Bodyweight
+Muscle Up,Muscle Up,Bodyweight
+Muscle Up,Wide Muscle Up,Bodyweight
+Muscle Up,Archer Pull Up,Bodyweight
+Muscle Up,Strict Bar MU,Bodyweight
+Muscle Up,L-Sit Muscle Up,Bodyweight
+Muscle Up,OA Pull Up Neg,Bodyweight
+Muscle Up,One Arm Pull Up,Bodyweight
+Muscle Up,High One Arm Pull Up,Bodyweight
+Muscle Up,OA Straight MU,Bodyweight
+Nordic Curl,45° Hip Hinge,Bodyweight
+Nordic Curl,SL RDL,Bodyweight
+Nordic Curl,90° Hip Hinge,Bodyweight
+Nordic Curl,Nordic Curl Negative,Bodyweight
+Nordic Curl,Nordic Curl,Bodyweight
+Nordic Curl,Nordic Curl Arms Overhead,Bodyweight
+Nordic Curl,Tuck One Leg Nordic Curl,Bodyweight
+Nordic Curl,One Leg Nordic Curl,Bodyweight
+Iron Cross,Back Lever,Bodyweight
+Iron Cross,Front Lever,Bodyweight
+Iron Cross,RTO 75° Dip,Bodyweight
+Iron Cross,Ring Strap HS PU,Bodyweight
+Iron Cross,Ring HS Push Up,Bodyweight
+Iron Cross,Planche,Bodyweight
+Iron Cross,Iron Cross Progression,Bodyweight
+Iron Cross,Iron Cross,Bodyweight
+Iron Cross,Iron Cross to FL,Bodyweight
+Iron Cross,Iron Cross to BL,Bodyweight
+Iron Cross,Ring Planche,Bodyweight
+Iron Cross,Inverted Cross,Bodyweight
+Ab Wheel,Knees Ab Wheel,Bodyweight
+Ab Wheel,Plank,Bodyweight
+Ab Wheel,Straddle One Arm Plank,Bodyweight
+Ab Wheel,One Arm Plank,Bodyweight
+Ab Wheel,OA OL Plank,Bodyweight
+Ab Wheel,Hollow Hold,Bodyweight
+Ab Wheel,Ring Ab Rollout,Bodyweight
+Ab Wheel,Straight Leg Ab Wheel Neg,Bodyweight
+Ab Wheel,Straight Leg Ab Wheel,Bodyweight
+Ab Wheel,Weighted Ab Wheel,Bodyweight
+Ab Wheel,One Arm Ab Wheel,Bodyweight
+Handstand,Handstand,Bodyweight
+Handstand,Wall Plank,Bodyweight
+Handstand,Wall Headstand,Bodyweight
+Handstand,Headstand,Bodyweight
+Handstand,Wall Handstand,Bodyweight
+Handstand,Ring Shld Stand,Bodyweight
+Handstand,Ring HS,Bodyweight
+Handstand,Tuck Handstand,Bodyweight
+Handstand,OA HS Progression,Bodyweight
+Handstand,Straddle OA HS,Bodyweight
+Handstand,Straight OA HS,Bodyweight
+Dragon Flag,Tuck Up Crunch,Bodyweight
+Dragon Flag,Hollow Hold,Bodyweight
+Dragon Flag,Seated Pike Leg Lift,Bodyweight
+Dragon Flag,Tuck Dragon Flag Negative,Bodyweight
+Dragon Flag,Advanced Tuck Dragon Flag,Bodyweight
+Dragon Flag,Straddle / One Leg Dragon Flag,Bodyweight
+Dragon Flag,Dragon Flag,Bodyweight
+Dragon Flag,Ankle Weight Dragon Flag,Bodyweight
+Dragon Flag,OA Dragon Flag,Bodyweight
+Dragon Flag,OL Dragon Press,Bodyweight
+Dragon Flag,Dragon Press,Bodyweight
+Dragon Flag,One Arm Dragon Press,Bodyweight
+Hanstand Push Up,Wall HeS PU Neg,Bodyweight
+Hanstand Push Up,Wall Plank,Bodyweight
+Hanstand Push Up,Wall Headstand,Bodyweight
+Hanstand Push Up,Headstand,Bodyweight
+Hanstand Push Up,Wall Handstand,Bodyweight
+Hanstand Push Up,Handstand,Bodyweight
+Hanstand Push Up,Wall HeS PU,Bodyweight
+Hanstand Push Up,Wall HS PU,Bodyweight
+Hanstand Push Up,Headstand PU,Bodyweight
+Hanstand Push Up,HS PU,Bodyweight
+Hanstand Push Up,Ring Shld Stand,Bodyweight
+Hanstand Push Up,Ring HS,Bodyweight
+Hanstand Push Up,Ring Wide HS PU,Bodyweight
+Hanstand Push Up,Ring Strap HS PU,Bodyweight
+Hanstand Push Up,Tuck Handstand,Bodyweight
+Hanstand Push Up,OA HS Progression,Bodyweight
+Hanstand Push Up,Straddle OA HS,Bodyweight
+Hanstand Push Up,Straight OA HS,Bodyweight
+Hanstand Push Up,Ring HS Push Up,Bodyweight
+Human Flag,Support Press,Bodyweight
+Human Flag,Side Plank,Bodyweight
+Human Flag,Tuck Flag,Bodyweight
+Human Flag,Vertical Flag,Bodyweight
+Human Flag,Adv Tuck Flag,Bodyweight
+Human Flag,Straddle Flag,Bodyweight
+Human Flag,Human Flag,Bodyweight
+Dips,Dip,Bodyweight
+Dips,Sup Hold,Bodyweight
+Dips,Dip Neg,Bodyweight
+Dips,Tuck L-Sit Dip,Bodyweight
+Dips,L-Sit Dip,Bodyweight
+Dips,Ring Sup Hold,Bodyweight
+Dips,RTO Sup Hold,Bodyweight
+Dips,Ring Dip Neg,Bodyweight
+Dips,Ring Dip,Bodyweight
+Dips,RTO Dip,Bodyweight
+Dips,Bulgarian Dip,Bodyweight
+Dips,Ring L-Sit Dip,Bodyweight
+Dips,Ring Wide Dip,Bodyweight
+Dips,RTO 45° Dip,Bodyweight
+Dips,RTO 75° Dip,Bodyweight
+Dips,RTO 90° Dip,Bodyweight
+V-Sit,One Leg Bent L-Sit,Bodyweight
+V-Sit,Foot Sup L-Sit,Bodyweight
+V-Sit,One Leg L-Sit,Bodyweight
+V-Sit,Tuck L-Sit,Bodyweight
+V-Sit,L-Sit,Bodyweight
+V-Sit,Straddle L-Sit,Bodyweight
+V-Sit,RTO L-Sit,Bodyweight
+V-Sit,45° V-Sit,Bodyweight
+V-Sit,90° V-Sit,Bodyweight
+V-Sit,120° V-Sit,Bodyweight
+V-Sit,140° V-Sit,Bodyweight
+V-Sit,155° V-Sit,Bodyweight
+V-Sit,170° V-Sit,Bodyweight
+V-Sit,Manna,Bodyweight
