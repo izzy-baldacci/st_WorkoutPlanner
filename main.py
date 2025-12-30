@@ -178,222 +178,217 @@ def export_program_csv(program):
 # Main app
 st.title("💪 Workout Program Designer")
 
-# Create three columns
-col1, col2 = st.columns([1, 2])
+with st.sidebar:
+   st.header("📚 Exercise Library")
+    
+   # Search and filter
+   search_term = st.text_input("🔍 Search exercises", "")
+       
+   categories = ['All'] + sorted(list(set([ex['Category'] for ex in st.session_state.exercises])))
+   filter_category = st.selectbox("Filter by category", categories)
+       
+   body_parts = ['All'] + sorted(list(set([ex['Body_Part'] for ex in st.session_state.exercises])))
+   filter_body_part = st.selectbox("Filter by body part", body_parts)
+       
+   # Display exercises
+   st.subheader("Available Exercises")
+       
+   exercises_df = pd.DataFrame(st.session_state.exercises)
+       
+   # Apply filters
+   if search_term:
+       exercises_df = exercises_df[exercises_df['Exercise'].str.contains(search_term, case=False)]
+   if filter_category != 'All':
+       exercises_df = exercises_df[exercises_df['Category'] == filter_category]
+   if filter_body_part != 'All':
+       exercises_df = exercises_df[exercises_df['Body_Part'] == filter_body_part]
+       
+   # Display exercises
+   for idx, exercise in exercises_df.iterrows():
+       with st.container():
+           st.markdown(f"**{exercise['Exercise']}**")
+           st.caption(f"{exercise['Body_Part']} • {exercise['Category']}")
+           st.divider() 
 
-# Left column - Exercise Library
-with col1:
-    st.header("📚 Exercise Library")
-    
-    # Search and filter
-    search_term = st.text_input("🔍 Search exercises", "")
-    
-    categories = ['All'] + sorted(list(set([ex['Category'] for ex in st.session_state.exercises])))
-    filter_category = st.selectbox("Filter by category", categories)
-    
-    body_parts = ['All'] + sorted(list(set([ex['Body_Part'] for ex in st.session_state.exercises])))
-    filter_body_part = st.selectbox("Filter by body part", body_parts)
-    
-    # Display exercises
-    st.subheader("Available Exercises")
-    
-    exercises_df = pd.DataFrame(st.session_state.exercises)
-    
-    # Apply filters
-    if search_term:
-        exercises_df = exercises_df[exercises_df['Exercise'].str.contains(search_term, case=False)]
-    if filter_category != 'All':
-        exercises_df = exercises_df[exercises_df['Category'] == filter_category]
-    if filter_body_part != 'All':
-        exercises_df = exercises_df[exercises_df['Body_Part'] == filter_body_part]
-    
-    # Display exercises
-    for idx, exercise in exercises_df.iterrows():
-        with st.container():
-            st.markdown(f"**{exercise['Exercise']}**")
-            st.caption(f"{exercise['Body_Part']} • {exercise['Category']}")
-            st.divider()
+#program functionality
+st.header("📋 My Programs")
 
-# Right column - Programs
-with col2:
-    st.header("📋 My Programs")
+# Create new program
+col_new1, col_new2 = st.columns([3, 1])
+with col_new1:
+    new_program_name = st.text_input("New program name", "")
+with col_new2:
+    st.write("")  # Spacing
+    if st.button("Create Program"):
+        if new_program_name:
+            create_new_program(new_program_name)
+            st.rerun()
+
+st.divider()
+
+# Display programs
+if len(st.session_state.programs) == 0:
+    st.info("No programs yet. Create one to get started!")
+else:
+    # Program selector
+    program_names = [p['name'] for p in st.session_state.programs]
     
-    # Create new program
-    col_new1, col_new2 = st.columns([3, 1])
-    with col_new1:
-        new_program_name = st.text_input("New program name", "")
-    with col_new2:
-        st.write("")  # Spacing
-        if st.button("Create Program"):
-            if new_program_name:
-                create_new_program(new_program_name)
-                st.rerun()
+    if st.session_state.current_program_idx is not None:
+        default_idx = st.session_state.current_program_idx
+    else:
+        default_idx = 0
+    
+    selected_program_name = st.selectbox(
+        "Select a program to edit",
+        program_names,
+        index=default_idx
+    )
+    st.session_state.current_program_idx = program_names.index(selected_program_name)
+    
+    current_program = st.session_state.programs[st.session_state.current_program_idx]
+    
+    # Program actions
+    col_act1, col_act2, col_act3, col_act4 = st.columns(4)
+    with col_act1:
+        if st.button("🗑️ Delete Program"):
+            delete_program(st.session_state.current_program_idx)
+            st.rerun()
+    with col_act2:
+        st.download_button(
+            label="📥 CSV",
+            data=export_program_csv(current_program),
+            file_name=f"{current_program['name'].replace(' ', '_')}.csv",
+            mime="text/csv"
+        )
+    with col_act3:
+        st.download_button(
+            label="📥 JSON",
+            data=export_program_json(current_program),
+            file_name=f"{current_program['name'].replace(' ', '_')}.json",
+            mime="application/json"
+        )
+    with col_act4:
+        if st.button("➕ Add Week"):
+            add_week_to_program(st.session_state.current_program_idx)
+            st.rerun()
     
     st.divider()
     
-    # Display programs
-    if len(st.session_state.programs) == 0:
-        st.info("No programs yet. Create one to get started!")
-    else:
-        # Program selector
-        program_names = [p['name'] for p in st.session_state.programs]
-        
-        if st.session_state.current_program_idx is not None:
-            default_idx = st.session_state.current_program_idx
-        else:
-            default_idx = 0
-        
-        selected_program_name = st.selectbox(
-            "Select a program to edit",
-            program_names,
-            index=default_idx
-        )
-        st.session_state.current_program_idx = program_names.index(selected_program_name)
-        
-        current_program = st.session_state.programs[st.session_state.current_program_idx]
-        
-        # Program actions
-        col_act1, col_act2, col_act3, col_act4 = st.columns(4)
-        with col_act1:
-            if st.button("🗑️ Delete Program"):
-                delete_program(st.session_state.current_program_idx)
-                st.rerun()
-        with col_act2:
-            st.download_button(
-                label="📥 CSV",
-                data=export_program_csv(current_program),
-                file_name=f"{current_program['name'].replace(' ', '_')}.csv",
-                mime="text/csv"
+    # Display weeks
+    for week_idx, week in enumerate(current_program['weeks']):
+        with st.expander(f"📅 {week['name']}", expanded=True):
+            # Week name editor
+            new_week_name = st.text_input(
+                "Week name",
+                value=week['name'],
+                key=f"week_name_{st.session_state.current_program_idx}_{week_idx}"
             )
-        with col_act3:
-            st.download_button(
-                label="📥 JSON",
-                data=export_program_json(current_program),
-                file_name=f"{current_program['name'].replace(' ', '_')}.json",
-                mime="application/json"
-            )
-        with col_act4:
-            if st.button("➕ Add Week"):
-                add_week_to_program(st.session_state.current_program_idx)
-                st.rerun()
-        
-        st.divider()
-        
-        # Display weeks
-        for week_idx, week in enumerate(current_program['weeks']):
-            with st.expander(f"📅 {week['name']}", expanded=True):
-                # Week name editor
-                new_week_name = st.text_input(
-                    "Week name",
-                    value=week['name'],
-                    key=f"week_name_{st.session_state.current_program_idx}_{week_idx}"
-                )
-                if new_week_name != week['name']:
-                    st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['name'] = new_week_name
+            if new_week_name != week['name']:
+                st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['name'] = new_week_name
+            
+            # Week actions
+            col_w1, col_w2 = st.columns([1, 1])
+            with col_w1:
+                if st.button("➕ Add Day", key=f"add_day_{week_idx}"):
+                    add_day_to_week(st.session_state.current_program_idx, week_idx)
+                    st.rerun()
+            with col_w2:
+                if st.button("🗑️ Delete Week", key=f"del_week_{week_idx}"):
+                    delete_week(st.session_state.current_program_idx, week_idx)
+                    st.rerun()
+            
+            st.divider()
+            
+            # Display days - each day in its own section
+            for day_idx, day in enumerate(week['days']):
+                st.markdown(f"### 📆 {day['name']}")
                 
-                # Week actions
-                col_w1, col_w2 = st.columns([1, 1])
-                with col_w1:
-                    if st.button("➕ Add Day", key=f"add_day_{week_idx}"):
-                        add_day_to_week(st.session_state.current_program_idx, week_idx)
-                        st.rerun()
-                with col_w2:
-                    if st.button("🗑️ Delete Week", key=f"del_week_{week_idx}"):
-                        delete_week(st.session_state.current_program_idx, week_idx)
-                        st.rerun()
-                
-                st.divider()
-                
-                # Display days - each day in its own section
-                for day_idx, day in enumerate(week['days']):
-                    st.markdown(f"### 📆 {day['name']}")
-                    
-                    # Day controls
-                    col_d1, col_d2 = st.columns([3, 1])
-                    with col_d1:
-                        new_day_name = st.text_input(
-                            "Rename day",
-                            value=day['name'],
-                            key=f"day_name_{week_idx}_{day_idx}",
-                            label_visibility="collapsed"
-                        )
-                        if new_day_name != day['name']:
-                            st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['name'] = new_day_name
-                    
-                    with col_d2:
-                        if st.button("🗑️ Delete Day", key=f"del_day_{week_idx}_{day_idx}"):
-                            delete_day(st.session_state.current_program_idx, week_idx, day_idx)
-                            st.rerun()
-                    
-                    # Display exercises
-                    if len(day['exercises']) == 0:
-                        st.info("No exercises yet. Select one below to add.")
-                    else:
-                        for ex_idx, exercise in enumerate(day['exercises']):
-                            with st.container():
-                                st.markdown(f"**{exercise['name']}**")
-                                
-                                col_ex1, col_ex2, col_ex3 = st.columns([1, 1, 1])
-                                
-                                with col_ex1:
-                                    new_sets = st.number_input(
-                                        "Sets",
-                                        min_value=1,
-                                        value=exercise['sets'],
-                                        key=f"sets_{week_idx}_{day_idx}_{ex_idx}"
-                                    )
-                                    if new_sets != exercise['sets']:
-                                        st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['sets'] = new_sets
-                                
-                                with col_ex2:
-                                    new_reps = st.number_input(
-                                        "Reps",
-                                        min_value=1,
-                                        value=exercise['reps'],
-                                        key=f"reps_{week_idx}_{day_idx}_{ex_idx}"
-                                    )
-                                    if new_reps != exercise['reps']:
-                                        st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['reps'] = new_reps
-                                
-                                with col_ex3:
-                                    if st.button("🗑️", key=f"del_ex_{week_idx}_{day_idx}_{ex_idx}"):
-                                        delete_exercise_from_day(st.session_state.current_program_idx, week_idx, day_idx, ex_idx)
-                                        st.rerun()
-                                
-                                new_notes = st.text_input(
-                                    "Notes",
-                                    value=exercise.get('notes', ''),
-                                    key=f"notes_{week_idx}_{day_idx}_{ex_idx}"
-                                )
-                                if new_notes != exercise.get('notes', ''):
-                                    st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['notes'] = new_notes
-                                
-                                st.divider()
-                    
-                    # Add exercise section
-                    st.markdown("**➕ Add Exercise**")
-                    
-                    # Create exercise options
-                    exercise_options = ["Select an exercise..."] + [f"{ex['Exercise']} ({ex['Body_Part']})" for ex in exercises_df.to_dict('records')]
-                    exercise_mapping = {f"{ex['Exercise']} ({ex['Body_Part']})": ex for ex in exercises_df.to_dict('records')}
-                    
-                    selected_exercise_str = st.selectbox(
-                        "Choose exercise",
-                        options=exercise_options,
-                        key=f"add_ex_select_{week_idx}_{day_idx}",
+                # Day controls
+                col_d1, col_d2 = st.columns([3, 1])
+                with col_d1:
+                    new_day_name = st.text_input(
+                        "Rename day",
+                        value=day['name'],
+                        key=f"day_name_{week_idx}_{day_idx}",
                         label_visibility="collapsed"
                     )
-                    
-                    if st.button("Add to Day", key=f"add_ex_btn_{week_idx}_{day_idx}"):
-                        if selected_exercise_str != "Select an exercise...":
-                            exercise = exercise_mapping.get(selected_exercise_str)
-                            if exercise:
-                                add_exercise_to_day(st.session_state.current_program_idx, week_idx, day_idx, exercise)
-                                st.rerun()
-                        else:
-                            st.warning("Please select an exercise first!")
-                    
-                    st.markdown("---")
+                    if new_day_name != day['name']:
+                        st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['name'] = new_day_name
+                
+                with col_d2:
+                    if st.button("🗑️ Delete Day", key=f"del_day_{week_idx}_{day_idx}"):
+                        delete_day(st.session_state.current_program_idx, week_idx, day_idx)
+                        st.rerun()
+                
+                # Display exercises
+                if len(day['exercises']) == 0:
+                    st.info("No exercises yet. Select one below to add.")
+                else:
+                    for ex_idx, exercise in enumerate(day['exercises']):
+                        with st.container():
+                            st.markdown(f"**{exercise['name']}**")
+                            
+                            col_ex1, col_ex2, col_ex3 = st.columns([1, 1, 1])
+                            
+                            with col_ex1:
+                                new_sets = st.number_input(
+                                    "Sets",
+                                    min_value=1,
+                                    value=exercise['sets'],
+                                    key=f"sets_{week_idx}_{day_idx}_{ex_idx}"
+                                )
+                                if new_sets != exercise['sets']:
+                                    st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['sets'] = new_sets
+                            
+                            with col_ex2:
+                                new_reps = st.number_input(
+                                    "Reps",
+                                    min_value=1,
+                                    value=exercise['reps'],
+                                    key=f"reps_{week_idx}_{day_idx}_{ex_idx}"
+                                )
+                                if new_reps != exercise['reps']:
+                                    st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['reps'] = new_reps
+                            
+                            with col_ex3:
+                                if st.button("🗑️", key=f"del_ex_{week_idx}_{day_idx}_{ex_idx}"):
+                                    delete_exercise_from_day(st.session_state.current_program_idx, week_idx, day_idx, ex_idx)
+                                    st.rerun()
+                            
+                            new_notes = st.text_input(
+                                "Notes",
+                                value=exercise.get('notes', ''),
+                                key=f"notes_{week_idx}_{day_idx}_{ex_idx}"
+                            )
+                            if new_notes != exercise.get('notes', ''):
+                                st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'][ex_idx]['notes'] = new_notes
+                            
+                            st.divider()
+                
+                # Add exercise section
+                st.markdown("**➕ Add Exercise**")
+                
+                # Create exercise options
+                exercise_options = ["Select an exercise..."] + [f"{ex['Exercise']} ({ex['Body_Part']})" for ex in exercises_df.to_dict('records')]
+                exercise_mapping = {f"{ex['Exercise']} ({ex['Body_Part']})": ex for ex in exercises_df.to_dict('records')}
+                
+                selected_exercise_str = st.selectbox(
+                    "Choose exercise",
+                    options=exercise_options,
+                    key=f"add_ex_select_{week_idx}_{day_idx}",
+                    label_visibility="collapsed"
+                )
+                
+                if st.button("Add to Day", key=f"add_ex_btn_{week_idx}_{day_idx}"):
+                    if selected_exercise_str != "Select an exercise...":
+                        exercise = exercise_mapping.get(selected_exercise_str)
+                        if exercise:
+                            add_exercise_to_day(st.session_state.current_program_idx, week_idx, day_idx, exercise)
+                            st.rerun()
+                    else:
+                        st.warning("Please select an exercise first!")
+                
+                st.markdown("---")
 
 # Footer
 st.markdown("---")
