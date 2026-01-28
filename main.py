@@ -8,10 +8,10 @@ st.set_page_config(page_title="Workout Program Designer", layout="wide")
 
 # Initialize session state
 @st.cache_data
-def load_exercise_data():
+def load_exercise_data(filepath):
     """Load exercise data from CSV with caching for improved performance."""
     try:
-        df = pd.read_csv('combined_exercise_library.csv')
+        df = pd.read_csv(filepath)
         df.insert(0, 'id', range(1, len(df) + 1))
         return df.to_dict('records')
     except FileNotFoundError:
@@ -24,7 +24,7 @@ def load_exercise_data():
         ]
     
 if 'exercises' not in st.session_state:
-    st.session_state.exercises = load_exercise_data()
+    st.session_state.exercises = load_exercise_data('combined_exercise_library.csv')
 
 if 'programs' not in st.session_state:
     st.session_state.programs = []
@@ -32,9 +32,19 @@ if 'programs' not in st.session_state:
 if 'current_program_idx' not in st.session_state:
     st.session_state.current_program_idx = None
 
+
 # Helper functions
 def get_next_id(items):
     return max([item['id'] for item in items], default=0) + 1
+
+def add_new_exercise(ex_name, ex_cat, ex_body_part):#, ex_notes=''):
+    all_exs = st.session_state.exercises
+    max([ex['id'] for ex in all_exs])
+    new_exercise = {'id': max([ex['id'] for ex in all_exs]) + 1,
+                    'Body_Part': ex_body_part,
+                    'Exercise': ex_name,
+                    'Category': ex_cat}
+    st.session_state.exercises.append(new_exercise)
 
 def create_new_program(name):
     new_program = {
@@ -53,6 +63,7 @@ def create_new_program(name):
     st.session_state.programs.append(new_program)
     st.session_state.current_program_idx = len(st.session_state.programs) - 1
 
+# add to programs, weeks, days
 def add_week_to_program(program_idx):
     program = st.session_state.programs[program_idx]
     new_week = {
@@ -86,6 +97,7 @@ def add_exercise_to_day(program_idx, week_idx, day_idx, exercise):
     }
     st.session_state.programs[program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'].append(new_workout_ex)
 
+# remove from programs, weeks, days
 def delete_program(program_idx):
     st.session_state.programs.pop(program_idx)
     if st.session_state.current_program_idx == program_idx:
@@ -102,6 +114,19 @@ def delete_day(program_idx, week_idx, day_idx):
 def delete_exercise_from_day(program_idx, week_idx, day_idx, exercise_idx):
     st.session_state.programs[program_idx]['weeks'][week_idx]['days'][day_idx]['exercises'].pop(exercise_idx)
 
+# repeat weeks or days 
+def repeat_week(program_idx, week_idx):
+    program = st.session_state.programs[program_idx]
+    week_to_rep = program['weeks'][week_idx]
+    #only adjust id and name, rest should stay the same
+    new_week = week_to_rep.copy()
+    new_week['id'] += 1
+    new_week['name'] = f"Week {int(week_to_rep['name'][-1]) + 1}" #or f"Week {len(program['weeks']) + 2}"
+
+    st.session_state.programs[program_idx]['weeks'].append(new_week)
+
+
+# export to json or csv
 def export_program_json(program):
     return json.dumps(program, indent=2)
 
@@ -182,6 +207,44 @@ st.title("💪 Workout Program Designer")
 
 with st.sidebar:
    st.header("📚 Exercise Library")
+
+   with st.expander("🏋️ Create Custom Exercise", expanded = False):
+        with st.form(key='custom_exercise_form'):
+            all_cats = sorted(list(set([ex['Category'] for ex in st.session_state.exercises])))
+            all_bps = sorted(list(set([ex['Body_Part'] for ex in st.session_state.exercises])))
+
+            nex_name = st.text_input(label='Name', key='custom_exercise_name')
+            nex_cat = st.selectbox(
+                'Category',
+                options=[''] + all_cats,
+                format_func=lambda x: 'Select or type below...' if x == '' else x
+            )
+            # If nothing selected, allow custom input
+            if not nex_cat:
+                nex_cat = st.text_input('Or enter custom category', key = 'custom_cat')
+            
+            nex_bp = st.selectbox(
+                'Category',
+                options=[''] + all_bps,
+                format_func=lambda x: 'Select or type below...' if x == '' else x
+            )
+            # If nothing selected, allow custom input
+            if not nex_bp:
+                nex_bp = st.text_input('Or enter custom category', key = 'custom_bp')
+            #nex_bp = st.text_input(label='Body Part', key='custom_exercise_bp')
+            #ex_notes = st.text_input(label = 'Notes', key = 'custom_exercise_notes')
+
+            submitted = st.form_submit_button("Click Here to Add Exercise")
+
+            if submitted:
+                if nex_name and nex_cat and nex_bp:
+                    # Add your logic here to save the exercise to your library
+                    st.success(f"Added {nex_name} to exercise library!")
+                    add_new_exercise(nex_name, nex_cat, nex_bp)
+                    st.rerun()
+                else:
+                    st.error("Please fill in all fields")
+
     
    # Search and filter
    search_term = st.text_input("🔍 Search exercises", "")
@@ -207,7 +270,7 @@ with st.sidebar:
        
    # Display exercises
    for idx, exercise in exercises_df.iterrows():
-       with st.container():
+       with st.container():#,height=100):
            st.markdown(f"**{exercise['Exercise']}**")
            st.caption(f"{exercise['Body_Part']} • {exercise['Category']}")
            st.divider() 
@@ -289,7 +352,7 @@ else:
                 st.session_state.programs[st.session_state.current_program_idx]['weeks'][week_idx]['name'] = new_week_name
             
             # Week actions
-            col_w1, col_w2 = st.columns([1, 1])
+            col_w1, col_w2, col_w3 = st.columns([1, 1, 1])
             with col_w1:
                 if st.button("➕ Add Day", key=f"add_day_{week_idx}"):
                     add_day_to_week(st.session_state.current_program_idx, week_idx)
@@ -297,6 +360,11 @@ else:
             with col_w2:
                 if st.button("🗑️ Delete Week", key=f"del_week_{week_idx}"):
                     delete_week(st.session_state.current_program_idx, week_idx)
+                    st.rerun()
+            
+            with col_w3:
+                if st.button("➕ Repeat Week", key=f"rep_week_{week_idx}"):
+                    repeat_week(st.session_state.current_program_idx, week_idx)
                     st.rerun()
             
             st.divider()
@@ -368,7 +436,7 @@ else:
                                 st.divider()
                     
                     # Add exercise section
-                    st.markdown("**➕ Add Exercise**")
+                    st.markdown("**⬇️ Add Exercise**")
                     
                     # Create exercise options
                     exercise_options = ["Select an exercise..."] + [f"{ex['Exercise']} ({ex['Body_Part']})" for ex in exercises_df.to_dict('records')]
