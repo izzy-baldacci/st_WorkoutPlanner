@@ -224,7 +224,7 @@ with st.sidebar:
                 nex_cat = st.text_input('Or enter custom category', key = 'custom_cat')
             
             nex_bp = st.selectbox(
-                'Category',
+                'Body Part',
                 options=[''] + all_bps,
                 format_func=lambda x: 'Select or type below...' if x == '' else x
             )
