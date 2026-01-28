@@ -230,7 +230,7 @@ with st.sidebar:
             )
             # If nothing selected, allow custom input
             if not nex_bp:
-                nex_bp = st.text_input('Or enter custom category', key = 'custom_bp')
+                nex_bp = st.text_input('Or enter custom body part', key = 'custom_bp')
             #nex_bp = st.text_input(label='Body Part', key='custom_exercise_bp')
             #ex_notes = st.text_input(label = 'Notes', key = 'custom_exercise_notes')
 
